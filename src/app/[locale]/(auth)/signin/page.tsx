@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import dynamic from "next/dynamic";
 
@@ -25,6 +24,5 @@ export async function generateMetadata({
 export default function SigninPage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
 
-  const t = useTranslations();
   return <DynamicComponent />;
 }

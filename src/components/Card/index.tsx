@@ -49,7 +49,7 @@ export default function Card({ item, small }: Props) {
             small && "text-base font-normal !mb-0"
           }`}
         >
-          <Link href={"/"} className="hover:text-primary">
+          <Link href={"/details"} className="hover:text-primary">
             {item?.title}
           </Link>
         </h4>

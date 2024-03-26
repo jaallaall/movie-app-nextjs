@@ -30,7 +30,7 @@ const indicatorSeparatorStyles = "bg-base-content/20";
 const dropdownIndicatorStyles =
   "p-1 text-base-conetnt/10 rounded-md hover:text-base-content/50";
 const menuStyles =
-  "p-1 mt-2 border border-base-content/10 bg-base-100 rounded-lg text-sm z-[]";
+  "p-1 mt-2 border border-base-content/10 bg-base-100 rounded-lg text-sm min-w-56";
 const groupHeadingStyles = "ml-3 mt-2 mb-1 text-base-conetnt/10";
 const optionStyles = {
   base: "hover:cursor-pointer px-3 py-2 rounded flex items-center",
@@ -38,6 +38,8 @@ const optionStyles = {
   selected:
     "after:content-['✔'] after:inline-block after:ms-1 after:ml-2 after:text-green-500 text-base-conetnt/10",
 };
+const menuListStyles =
+  "[&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-base-200 [&::-webkit-scrollbar-thumb]:bg-primary";
 const noOptionsMessageStyles =
   "text-base-conetnt/30 p-2 bg-base-200 rounded-sm";
 const loadingMessageStyle = "text-base-conetnt/30 p-2 bg-base-200 rounded-sm";
@@ -152,6 +154,7 @@ export default function SelectInputSimple({
             ),
           noOptionsMessage: () => noOptionsMessageStyles,
           loadingMessage: () => loadingMessageStyle,
+          menuList: () => menuListStyles,
         }}
       />
     </div>

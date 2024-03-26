@@ -13,11 +13,54 @@
     "save": "save",
     "register": "register"
   },
+  "Pages": {
+    "index": "home",
+    "auth": "signin",
+    "details": "details",
+    "catalog": "catalog",
+    "contacts": "contacts",
+    "about": "about",
+    "notFound": "not found"
+  },
+  "Signin": {
+    "title": "signin",
+    "password": "password",
+    "username": "username"
+  },
   "Index": {
     "title": "home",
     "description": "| dashboard",
     "rich": "This is a <important>rich</important> text.",
     "globalDefaults": "<highlight>{globalString}</highlight>",
-    "welcome": "welcome to movie"
+    "welcome": "به سایت فیلم خوش آمدید!",
+    "home": "صفحه نخست",
+    "catalog": "کاتالوگ",
+    "aboutUs": "درباره ما",
+    "contactUs": "تماس با ما",
+    "signin": "ثبت نام"
+  },
+  "Auth": {
+    "title": "ورود به سایت"
+  },
+  "Details": {
+    "title": "توضیحات فیلم"
+  },
+  "Catalog": {
+    "title": "کاتالوگ",
+    "genre": "ژانر",
+    "quality": "کیفیت",
+    "rating": "رتبه بندی",
+    "releaseYear": "سال انتشار"
+  },
+  "Cantacts": {
+    "title": "تماس با ما"
+  },
+  "About": {
+    "title": "درباره ما"
+  },
+  "NotFound": {
+    "title": "۴۰۴",
+    "notFound": "صفحه مورد نظر یافت نشد!",
+    "goBack": "بازگشت به صفحه نخست"
   }
 }

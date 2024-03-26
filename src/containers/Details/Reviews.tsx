@@ -1,4 +1,3 @@
-import Image from "next/image";
 import AddReview from "./AddReview";
 
 export default function Reviews() {
@@ -8,13 +7,8 @@ export default function Reviews() {
       <ul className="text-justify mb-4">
         <li>
           <div className="grid grid-cols-[max-content_1fr_max-content] gap-x-3 mb-4 items-center">
-            <div className="rounded-lg overflow-hidden w-11 h-11 relative">
-              <Image
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                alt="avatar"
-                fill
-                style={{ objectFit: "scale-down" }}
-              />
+            <div className="bg-neutral text-neutral-content rounded-full w-12 h-12 flex-center">
+              <span className="text-xl">AI</span>
             </div>
             <div>
               <span className="block mb-1">John Doe</span>
