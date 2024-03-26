@@ -25,6 +25,7 @@ export { default as ImageView } from "./ImageView";
 export { default as NoteMedical } from "./NoteMedical";
 export { default as PenToSquare } from "./PenToSquare";
 export { default as Play } from "./Play";
+export { default as RightToBracket } from "./RightToBracket";
 export { default as ThumbsDown } from "./ThumbsDown";
 export { default as ThumbsUp } from "./ThumbsUp";
 export { default as Trash } from "./Trash";

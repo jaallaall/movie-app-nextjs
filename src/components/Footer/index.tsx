@@ -22,7 +22,7 @@ export default function Footer() {
               <Link href={"/contacts"}>تماس باما</Link>
             </li>
           </ul>
-          <aside className="grid-flow-col gap-4 items-center max-md:col-span-3 max-md:col-start-1 max-md:row-start-2 md:place-self-end pe-3">
+          <aside className="grid-flow-col gap-4 items-center max-md:col-span-3 max-md:col-start-1 max-md:row-start-2 md:place-self-end md:self-center pe-3">
             <svg
               width="24"
               height="24"

@@ -5,6 +5,7 @@ import Search from "./Search";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { menu } from "./data";
 import { useTranslations } from "next-intl";
+import { RightToBracket } from "../Icons";
 
 export default function Navbar() {
   const t = useTranslations("Index");
@@ -36,23 +37,15 @@ export default function Navbar() {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
+              {menu.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <Link href={item.href} className="p-2">
+                      {t(item.title as any)}
+                    </Link>
                   </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+                );
+              })}
             </ul>
           </div>
           <div className="hidden lg:flex flex-auto col-span-2">
@@ -75,10 +68,11 @@ export default function Navbar() {
             <ThemeSwitcher />
 
             <Link
-              className="btn btn-outline btn-custom h-10 ms-3"
+              className="btn btn-outline btn-custom h-10 md:w-auto w-10 ms-3 max-md:p-0"
               href={"/signin"}
             >
-              ثبت نام
+              <span className="md:block hidden">{t("signin")}</span>
+              <RightToBracket className="w-5 h-5 md:hidden" />
             </Link>
           </div>
         </div>

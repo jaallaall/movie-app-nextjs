@@ -33,9 +33,7 @@ export default function Input({
     <input
       type={type}
       id={field.name ? "input-" + field.name : undefined}
-      className={`input input-bordered w-full peer ${
-        icon ? "ps-10" : ""
-      } ${classInput}`}
+      className={`input w-full peer ${icon ? "ps-10" : ""} ${classInput}`}
       placeholder={placeholder}
       onChange={onChange}
       value={field.value}

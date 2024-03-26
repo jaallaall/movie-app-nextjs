@@ -10,7 +10,7 @@ function capitalizeFirstLetter(string: string) {
 }
 
 export default function Breadcrumbs() {
-  const t = useTranslations();
+  const t = useTranslations("Pages");
   const pathname = usePathname();
 
   return (
@@ -23,7 +23,7 @@ export default function Breadcrumbs() {
           return (
             <li key={i}>
               <Link href={"/" + item} className="hover:text-primary">
-                {item === "" ? t("Index.title") : t(item as any)}
+                {item === "" ? t("index") : t(item as any)}
               </Link>
             </li>
           );

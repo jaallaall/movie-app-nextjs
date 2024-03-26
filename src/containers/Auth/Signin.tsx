@@ -56,14 +56,14 @@ export default function Signin() {
             name="username"
             component={Input}
             label={t("Signin.username")}
-            classInput="border-none bg-base-200"
+            classInput="bg-base-200"
             classLabel="bg-base-200"
           />
           <Field
             name="password"
             component={Input}
             label={t("Signin.password")}
-            classInput="border-0 bg-base-200"
+            classInput="bg-base-200"
             className="mt-6"
             classLabel="bg-base-200"
           />
