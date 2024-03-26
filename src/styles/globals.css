@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@import url(font.css);
+@tailwind utilities;
+
+@layer components {
+
+    a {
+        @apply !no-underline
+    }
+
+    ::selection {
+        @apply bg-primary;
+    }
+
+    [aria-disabled=true] {
+        @apply border-base-100 bg-base-200 text-base-content/20
+    }
+
+    [aria-disabled=true]>label {
+        @apply border-none bg-transparent
+    }
+
+    .tab {
+        --tab-border-color: theme(colors.base-content/0.3)
+    }
+
+    .btn-custom {
+        @apply !text-base-content border-2 border-primary hover:bg-primary/10 hover:border-primary font-normal
+    }
+
+    .input:focus,
+    .input:focus-within,
+    .textarea:focus,
+    .textarea:focus-within {
+        @apply outline-primary border-primary/45
+    }
+
+    .prose :where(h1):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+        @apply text-[2rem]
+    }
+
+    .btn:is(input[type="checkbox"]:checked),
+    .btn:is(input[type="radio"]:checked) {
+        @apply bg-base-100 border-primary
+    }
+
+    .tab.tab-active:not(.tab-disabled):not([disabled]),
+    .tab:is(input:checked) {
+        @apply border-primary
+    }
+
+    .video-react .video-react-control:focus::before,
+    .video-react .video-react-control:hover::before,
+    .video-react .video-react-control:focus {
+        text-shadow: none !important;
+        @apply text-primary
+    }
+
+    .video-react .video-react-slider:focus {
+        box-shadow: none !important
+    }
+
+    .video-react .video-react-play-progress,
+    .video-react .video-react-volume-level {
+        @apply !bg-primary
+    }
+
+    .video-react .video-react-big-play-button {
+        @apply !rounded-full !w-16 !h-16 !border-0 !bg-white/30 !p-1.5 !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 ease-in-out
+    }
+
+    .video-react .video-react-big-play-button:hover {
+        @apply !bg-primary/40
+    }
+
+    .video-react .video-react-big-play-button:before {
+        @apply flex items-center justify-center bg-white rounded-full text-primary !relative
+    }
+
+    .video-react .video-react-control-bar {
+        @apply !bg-transparent
+    }
+
+}
+
+.thumb,
+.thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}

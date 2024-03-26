@@ -1,0 +1,12 @@
+export { default as Bell } from "./Bell";
+export { default as CirclePlay } from "./CirclePlay";
+export { default as Film } from "./Film";
+export { default as Globe } from "./Globe";
+export { default as QuoteLeft } from "./QuoteLeft";
+export { default as QuoteRight } from "./QuoteRight";
+export { default as Reply } from "./Reply";
+export { default as Rocket } from "./Rocket";
+export { default as ThumbsDown } from "./ThumbsDown";
+export { default as ThumbsUp } from "./ThumbsUp";
+export { default as Trophy } from "./Trophy";
+export { default as Tv } from "./Tv";

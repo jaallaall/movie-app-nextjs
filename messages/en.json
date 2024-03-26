@@ -1,0 +1,23 @@
+{
+  "Basic": {
+    "dark": "dark",
+    "light": "light",
+    "langFa": "Persian",
+    "langEn": "English",
+    "yes": "yes",
+    "no": "no",
+    "cancle": "cancle",
+    "delete": "delete",
+    "edit": "edit",
+    "title": "title",
+    "save": "save",
+    "register": "register"
+  },
+  "Index": {
+    "title": "home",
+    "description": "| dashboard",
+    "rich": "This is a <important>rich</important> text.",
+    "globalDefaults": "<highlight>{globalString}</highlight>",
+    "welcome": "welcome to movie"
+  }
+}
