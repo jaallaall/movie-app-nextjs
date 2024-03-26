@@ -26,7 +26,7 @@
     }
 
     .btn-custom {
-        @apply !text-base-content border-2 border-primary hover:bg-primary/10 hover:border-primary font-normal
+        @apply bg-transparent !text-base-content border-2 border-primary hover:bg-primary/10 hover:border-primary font-normal
     }
 
     .input:focus,

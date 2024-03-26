@@ -60,7 +60,7 @@ export default function Navbar() {
               {menu.map((item) => {
                 return (
                   <li key={item.id}>
-                    <Link href={item.href}>{t(item.title)}</Link>
+                    <Link href={item.href}>{t(item.title as any)}</Link>
                   </li>
                 );
               })}
@@ -74,9 +74,12 @@ export default function Navbar() {
             <LocaleSwitcher />
             <ThemeSwitcher />
 
-            <button className="btn btn-outline btn-custom h-10 ms-3">
+            <Link
+              className="btn btn-outline btn-custom h-10 ms-3"
+              href={"/signin"}
+            >
               ثبت نام
-            </button>
+            </Link>
           </div>
         </div>
       </div>

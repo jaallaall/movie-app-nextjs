@@ -2,6 +2,8 @@ import { FieldProps } from "formik";
 
 interface FormikSelectProps extends FieldProps {
   className?: string;
+  classInput?: string;
+  classLabel?: string;
   disabled?: boolean;
   label?: string;
   name: string;
@@ -17,6 +19,8 @@ export default function Input({
   form,
   placeholder = " ",
   className = "",
+  classInput = "",
+  classLabel = "",
   type = "text",
   min = 1,
   icon,
@@ -29,7 +33,9 @@ export default function Input({
     <input
       type={type}
       id={field.name ? "input-" + field.name : undefined}
-      className={`input input-bordered w-full peer ${icon ? "ps-10" : ""}`}
+      className={`input input-bordered w-full peer ${
+        icon ? "ps-10" : ""
+      } ${classInput}`}
       placeholder={placeholder}
       onChange={onChange}
       value={field.value}
@@ -46,7 +52,7 @@ export default function Input({
             field.value
               ? "scale-75 -translate-y-full text-base-content/70 text-[1.1rem]"
               : "peer-focus:scale-75 peer-focus:-translate-y-full peer-focus:text-base-content/70 peer-focus:text-[1.1rem]"
-          } absolute duration-300 transform top-3 origin-[50%_0] px-2 bg-base-100 start-1`}
+          } absolute duration-300 transform top-3 origin-[50%_0] px-2 bg-base-100 start-1 ${classLabel}`}
         >
           {label}
         </label>

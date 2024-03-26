@@ -1,6 +1,22 @@
 "use client";
 
+import { Input } from "@/components/FormControl";
+import { Field, Form, Formik, FormikHelpers } from "formik";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+
+export interface FormValues {
+  username: string;
+  password: string;
+}
+
+const defaultValues: FormValues = {
+  username: "",
+  password: "",
+};
+
 export default function Signin() {
+  const t = useTranslations();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // if (error) setError(undefined);
@@ -18,115 +34,58 @@ export default function Signin() {
     //   }
     // });
   };
+  const onSubmit = (
+    values: FormValues,
+    { setSubmitting }: FormikHelpers<FormValues>
+  ) => {
+    console.log(values);
+    setSubmitting(false);
+  };
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="border border-base-content/10 rounded-lg md:p-7 p-4 bg-base-100"
-    >
-      <div className="">
-        <div>
-          <label htmlFor="email" className="block text-sm mb-1 dark:text-white">
-            نام کاربری
-          </label>
-          <div className="relative">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-              required
-              aria-describedby="email-error"
-            />
-            <div className=" absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
-              <svg
-                className="h-5 w-5 text-red-500"
-                width={16}
-                height={16}
-                fill="currentColor"
-                viewBox="0 0 16 16"
-                aria-hidden="true"
-              >
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-              </svg>
-            </div>
-          </div>
-          <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-            Please include a valid email address so we can get back to you
-          </p>
-        </div>
-        <div className="mt-3">
-          <div className="flex justify-between items-center">
-            <label
-              htmlFor="password"
-              className="block text-sm mb-1 dark:text-white"
-            >
-              گذرواژه
-            </label>
-            <a
-              className="text-sm text-primary decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              href="../examples/html/modal-recover-account.html"
-            >
-              رمز خود را فراموش کرده اید?
-            </a>
-          </div>
-          <div className="relative">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-              required
-              aria-describedby="password-error"
-            />
-            <div className="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
-              <svg
-                className="h-5 w-5 text-red-500"
-                width={16}
-                height={16}
-                fill="currentColor"
-                viewBox="0 0 16 16"
-                aria-hidden="true"
-              >
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-              </svg>
-            </div>
-          </div>
-          <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-            8+ characters required
-          </p>
-        </div>
-        <div className="flex items-center mt-3">
-          <div className="flex">
-            <input
-              id="remember-me"
-              name="remember-me"
-              type="checkbox"
-              className="shrink-0 mt-0.5 border-gray-200 rounded text-primary pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-primary dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-            />
-          </div>
-          <div className="ms-3">
-            <label htmlFor="remember-me" className="text-sm dark:text-white">
-              بخاطر سپاری
-            </label>
-          </div>
-        </div>
-        <button
-          type="submit"
-          className="w-full py-3 px-4 mt-5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary-100 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-        >
-          ورود به سایت
-        </button>
+    <div className="border border-base-content/10 rounded-lg md:p-7 p-4 bg-base-100">
+      <div className="mb-6 prose text-center">
+        <h2>ورود به سایت</h2>
       </div>
+      <Formik
+        initialValues={defaultValues}
+        //   validationSchema={formSchemaRegisterProduct}
+        onSubmit={onSubmit}
+      >
+        <Form>
+          <Field
+            name="username"
+            component={Input}
+            label={t("Signin.username")}
+            classInput="border-none bg-base-200"
+            classLabel="bg-base-200"
+          />
+          <Field
+            name="password"
+            component={Input}
+            label={t("Signin.password")}
+            classInput="border-0 bg-base-200"
+            className="mt-6"
+            classLabel="bg-base-200"
+          />
 
-      <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+          <div className="form-control mt-3">
+            <label className="label cursor-pointer">
+              <input type="checkbox" defaultChecked className="checkbox" />
+              <span className="label-text">مرا بخاطر بسپار</span>
+            </label>
+          </div>
+
+          <button type="submit" className="btn btn-custom w-full mt-4">
+            ورود به سایت
+          </button>
+        </Form>
+      </Formik>
+      <p className="mb-0 mt-4 text-sm">
         کاربر جدید هستید؟
-        <a
-          href="#!"
-          className="text-red-300 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 ms-1"
-        >
+        <Link href="#!" className="text-primary ps-2">
           یک حساب بسازید
-        </a>
+        </Link>
       </p>
-    </form>
+    </div>
   );
 }
